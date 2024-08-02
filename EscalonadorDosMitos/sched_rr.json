@@ -1,0 +1,35 @@
+{
+    "simulationTime": 34,
+    "schedulerName": "rr",
+    "tasksNumber": 4,
+    "tasks": [ 
+        {
+            "offset": 0,
+            "computationTime": 4,
+            "periodTime": 12,
+            "quantum": 2,
+            "deadline": 16
+        },
+        {
+            "offset": 0,
+            "computationTime": 3,
+            "periodTime": 20,
+            "quantum": 2,
+            "deadline": 18
+        },
+        {
+            "offset": 1,
+            "computationTime": 3,
+            "periodTime": 19,
+            "quantum": 2,
+            "deadline": 24
+        },
+        {
+            "offset": 3,
+            "computationTime": 4,
+            "periodTime": 25,
+            "quantum": 2,
+            "deadline": 19
+        }
+    ]
+}
