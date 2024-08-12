@@ -1,15 +1,30 @@
 ﻿
 
+using Newtonsoft.Json;
+
 namespace EscalonadorDosMitos
 {
     public class Task
     {
+        
         public int Offset { get; set; }
+
+        
         public int ComputationTime { get; set; }
+
+        
         public int PeriodTime { get; set; }
+
+        
         public int Quantum { get; set; }
+
+        
         public int Deadline { get; set; }
+
+        
         public int Index { get; set; }
+
+        
         public int RelativeDeadline { get; set; }
 
         public Task(int offset, int computationTime, int periodTime, int quantum, int deadline, int index)
@@ -24,9 +39,9 @@ namespace EscalonadorDosMitos
         }
         
 
-        public Task CloneTask()
+        public Task CloneTask(Task taskToBeCloned)
         {
-            Task task = new Task(Offset, ComputationTime, PeriodTime, Quantum, Deadline, Index);
+            Task task = new Task(taskToBeCloned.Offset, taskToBeCloned.ComputationTime, taskToBeCloned.PeriodTime, taskToBeCloned.Quantum, taskToBeCloned.Deadline, taskToBeCloned.Index);
             return  task;
         }
 
@@ -34,8 +49,8 @@ namespace EscalonadorDosMitos
         {
             return "Tarefa\n" +
                     "Offset = " + Offset + "\n" +
-                    "Computation time = " + ComputationTime + "\n" +
-                    "Period time = " + PeriodTime + "\n" +
+                    "ComputationTime = " + ComputationTime + "\n" +
+                    "PeriodTime = " + PeriodTime + "\n" +
                     "Quantum = " + Quantum + "\n" +
                     "Deadline = " + Deadline;
         }

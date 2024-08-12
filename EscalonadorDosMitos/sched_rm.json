@@ -1,28 +1,28 @@
 {
-  "simulationTime": 16,
-  "schedulerName": "rm",
-  "tasksNumber": 3,
-  "tasks": [
+  "SimulationTime": 16,
+  "SchedulerName": "rm",
+  "TasksNumber": 3,
+  "Tasks": [
     {
-      "offset": 0,
-      "computationTime": 1,
-      "periodTime": 2,
-      "quantum": 2,
-      "deadline": 2
+      "Offset": 0,
+      "ComputationTime": 1,
+      "PeriodTime": 2,
+      "Quantum": 2,
+      "Deadline": 2
     },
     {
-      "offset": 0,
-      "computationTime": 1,
-      "periodTime": 4,
-      "quantum": 2,
-      "deadline": 4
+      "Offset": 0,
+      "ComputationTime": 1,
+      "PeriodTime": 4,
+      "Quantum": 2,
+      "Deadline": 4
     },
     {
-      "offset": 0,
-      "computationTime": 2,
-      "periodTime": 8,
-      "quantum": 2,
-      "deadline": 8
+      "Offset": 0,
+      "ComputationTime": 2,
+      "PeriodTime": 8,
+      "Quantum": 2,
+      "Deadline": 8
     }
   ]
 }

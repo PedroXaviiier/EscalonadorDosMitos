@@ -4,41 +4,41 @@ namespace EscalonadorDosMitos
 {
     public class Cpu
     {
-        private int tempoDeComputacao = 0;
+        private int computationTime = 0;
         private int quantum = 0;
-        public Task? tarefaNaCpu {  get; set; }
+        public Task? TaskInCpu {  get; set; }
         
-        public bool Computar(Task task, bool possuiQuantum, bool preemptivo)
+        public bool Compute(Task task, bool hasQuantum, bool preemptive)
         {
 
             if (task != null)
             {
-                if (tempoDeComputacao <= 0 || quantum <= 0 || preemptivo)
+                if (computationTime <= 0 || quantum <= 0 || preemptive)
                 {
                     task.ComputationTime = task.ComputationTime - 1;
-                    tempoDeComputacao = task.ComputationTime;
+                    computationTime = task.ComputationTime;
                     quantum = task.Quantum - 1;
-                    tarefaNaCpu = task;
+                    TaskInCpu = task;
                 }
                 else
                 {
                     task.ComputationTime = task.ComputationTime - 1;
-                    tempoDeComputacao -= 1;
+                    computationTime -= 1;
                     quantum -= 1;
                 }
             }
 
-            if (!possuiQuantum)
+            if (!hasQuantum)
             {
                 quantum = 2;
             }
 
-            if (tarefaNaCpu != null)
+            if (TaskInCpu != null)
             {
-                Console.WriteLine("    Tarefa na CPU: " + (tarefaNaCpu.Index + 1));
+                Console.WriteLine("    Tarefa na CPU: " + (TaskInCpu.Index + 1));
             }
 
-            return tempoDeComputacao > 0 && quantum > 0;
+            return computationTime > 0 && quantum > 0;
         }
 
         
