@@ -178,7 +178,7 @@ namespace EscalonadorDosMitos
         {
             if (i >= task.Offset && (i - task.Offset) % task.PeriodTime == 0)
             {
-                if (readyQueue == null)
+                if (readyQueue.Count == 0)
                 {
                     readyQueue.Add(task.CloneTask(task));
                     activations[task.Index]++;
@@ -195,12 +195,12 @@ namespace EscalonadorDosMitos
                             InsertionIndex = j;
                             break;
                         }
-                        else
+                        else 
                         {
                             InsertionIndex = j + 1;
                         }
                     }
-                    readyQueue[InsertionIndex] = task.CloneTask(task);
+                    readyQueue.Insert(InsertionIndex, task.CloneTask(task));
                     activations[task.Index]++;
                 }
             }
@@ -216,7 +216,7 @@ namespace EscalonadorDosMitos
 
         private bool Check(List<Task> readyQueue, bool isComputing, bool hasQuantum, bool preemptive, bool hasDeadLine, int time)
         {
-            if (readyQueue == null || cpu.TaskInCpu != null)
+            if (readyQueue.Count != 0 || cpu.TaskInCpu != null)
             {
                 if (!isComputing || preemptive)
                 {
@@ -226,7 +226,7 @@ namespace EscalonadorDosMitos
                         cpu.TaskInCpu = null;
                     }
 
-                    if (readyQueue == null)
+                    if (readyQueue.Count != 0)
                     {
                         isComputing = cpu.Compute(readyQueue.ElementAt(0), hasQuantum, preemptive);
                         readyQueue.RemoveAt(0);
@@ -336,7 +336,7 @@ namespace EscalonadorDosMitos
                     AddPreemptiveToList(readyQueue, i, tarefa);
                 }
 
-                if(readyQueue == null && cpu.TaskInCpu != null && readyQueue.ElementAt(0).Deadline < cpu.TaskInCpu.Deadline) 
+                if(readyQueue.Count != 0 && cpu.TaskInCpu != null && readyQueue.ElementAt(0).Deadline < cpu.TaskInCpu.Deadline) 
                 {
                     preemptive = true;
                 }
@@ -374,7 +374,7 @@ namespace EscalonadorDosMitos
                         AddPreemptiveToList(readyQueue, i, task);
                     }
 
-                    if (readyQueue == null && cpu.TaskInCpu != null && (readyQueue.ElementAt(0).RelativeDeadline < cpu.TaskInCpu.RelativeDeadline ||
+                    if (readyQueue.Count != 0 && cpu.TaskInCpu != null && (readyQueue.ElementAt(0).RelativeDeadline < cpu.TaskInCpu.RelativeDeadline ||
                        (readyQueue.ElementAt(0).RelativeDeadline == cpu.TaskInCpu.RelativeDeadline && readyQueue.ElementAt(0).Deadline < cpu.TaskInCpu.Deadline))) 
                     { 
                         preemptive = true;

@@ -5,10 +5,10 @@ string tipo;
 JsonReader jsonReader = new JsonReader();
 Simulation SimulationManager = new Simulation();
 
-SchedulerSpecs fcfs = jsonReader.JsonFileReader("C:\\Users\\phxav\\source\\repos\\EscalonadorDosMitos\\EscalonadorDosMitos\\sched_fcfs.json");
-SchedulerSpecs rr = jsonReader.JsonFileReader("C:\\Users\\phxav\\source\\repos\\EscalonadorDosMitos\\EscalonadorDosMitos\\sched_rr.json");
-SchedulerSpecs rm = jsonReader.JsonFileReader("C:\\Users\\phxav\\source\\repos\\EscalonadorDosMitos\\EscalonadorDosMitos\\sched_rm.json");
-SchedulerSpecs edf = jsonReader.JsonFileReader("C:\\Users\\phxav\\source\\repos\\EscalonadorDosMitos\\EscalonadorDosMitos\\sched_edf.json");
+SchedulerSpecs fcfs = jsonReader.JsonFileReader("C:\\Users\\maria\\Source\\Repos\\EscalonadorDosMitos\\EscalonadorDosMitos\\sched_fcfs.json");
+SchedulerSpecs rr = jsonReader.JsonFileReader("C:\\Users\\maria\\Source\\Repos\\EscalonadorDosMitos\\EscalonadorDosMitos\\sched_rr.json");
+SchedulerSpecs rm = jsonReader.JsonFileReader("C:\\Users\\maria\\Source\\Repos\\EscalonadorDosMitos\\EscalonadorDosMitos\\sched_rm.json");
+SchedulerSpecs edf = jsonReader.JsonFileReader("C:\\Users\\maria\\Source\\Repos\\EscalonadorDosMitos\\EscalonadorDosMitos\\sched_edf.json");
 
 do
 {
